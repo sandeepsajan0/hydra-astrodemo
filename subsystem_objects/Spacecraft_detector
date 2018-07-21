@@ -1,0 +1,53 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Detector",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://umbel.org/umbel/rc/Sensor_Device" },
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/SubSystems_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/objective" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/isComponentOf" },
+            "owl:hasValue" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireOutWith" },
+            "owl:hasValue" : [
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
+            ]
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireInWith" },
+            "owl:hasValue" : "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower"
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+                      {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasVoltage" },
+            "owl:minCardinality" : 1
+        }
+    ],
+    "rdf:label": "Spacecraft_Detector",
+    "rdf:comment": "A space detector is a sensor supported by another device that let it collect data, that is deployed into a spacecraft and works outside Earth lower atmosphere",
+    "skos:prefLabel": "Any scientific instrument carried by a space probe or an artificial satellite",
+    "spacecraft:isComponentOf": { "@id": "http://ontology.projectchronos.eu/spacecraft/Payload_Spacecraft" },
+    "chronos:relConcept": {
+      "@id": "http://hypermedia.projectchronos.eu/data/dbpediadocs/sensor"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS_ActiveDevice",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf": [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft_AODCS" },
+        {
+              "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+              "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireInWith" },
+              "owl:hasValue" : [
+                { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
+                { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" },
+                { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
+              ]
+        }
+    ],
+    "rdf:label": "Spacecraft_AODCS_Active",
+    "skos:prefLabel": "AODCS that do not use any power from the spacecraft power to work.",
+    "rdf:comment": "Do NOT use any additional power from the spacecraft generator"
+}

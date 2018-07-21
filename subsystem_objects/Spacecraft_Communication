@@ -1,0 +1,69 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/function" },
+            "owl:hasValue" : [
+                { "@id": "http://live.dbpedia.org/data/Transmitting.ntriples" },
+                { "@id": "http://umbel.org/umbel/rc/Receiving" }
+            ]
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf" },
+            "owl:hasValue" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasMinTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasMaxTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/ElectronicDevice" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireOutWith" },
+            "owl:hasValue" : [
+                { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
+            ]
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireInWith" },
+            "owl:hasValue" : [
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" },
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
+            ]
+        }
+    ],
+
+    "rdf:label": "Spacecraft_Communication",
+    "skos:prefLabel": "It handles communication from/to ground base or other spacecraft.",
+    "rdf:comment": "Complex devices-subsystems used for transmitting/receiving radio waves.",
+    "spacecraft:isComponentOf": { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" },
+    "chronos:relConcept": {
+      "@id": "http://hypermedia.projectchronos.eu/data/dbpediadocs/telecommunication"
+    }
+}

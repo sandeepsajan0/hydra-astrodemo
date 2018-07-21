@@ -1,0 +1,58 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/function" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/ElectricalPowerGeneration" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf" },
+            "owl:hasValue" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasEfficiency" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasVoltage" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/ElectricalDevice" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+                      {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireOutWith" },
+            "owl:hasValue" : [
+              { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_Communication" },
+              { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" },
+              { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS" },
+              { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion" },
+              { "@id":"http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal" }
+            ]
+        }
+    ],
+
+    "skos:prefLabel": "The set of subsystems needed to make a spacecraft to collect energy to operate",
+    "rdf:label": "Spacecraft_PrimaryPower.",
+    "rdf:comment": "Complex devices-subsystems used for collecting energy.",
+    "spacecraft:isComponentOf": { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+}

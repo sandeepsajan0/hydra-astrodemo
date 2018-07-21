@@ -1,0 +1,42 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Structure",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/function" },
+            "owl:hasValue" : { "@id": "http://live.dbpedia.org/data/Structural_system.ntriples" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf" },
+            "owl:hasValue" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/standsMaxTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/PhysicalDevice" }
+        }
+    ],
+
+    "rdf:label": "Spacecraft_Structure",
+    "skos:prefLabel": "Artifacts or rigid devices used to create a supporting structure for all the others devices.",
+    "rdf:comment": "It's the skeleton and framework of the spacecraft.",
+    "spacecraft:isComponentOf": { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+}

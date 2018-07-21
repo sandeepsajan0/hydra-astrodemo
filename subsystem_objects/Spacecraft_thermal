@@ -1,0 +1,17 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/function" },
+            "owl:hasValue" : { "@id": "http://live.dbpedia.org/data/Process_control.ntriples" }
+        }
+    ],
+
+    "rdf:label": "Spacecraft_Thermal",
+    "skos:prefLabel": "Artifacts or devices used to maintain the temperature of spacecraft's subsystems and payloads into a given range, to permit nominal and survival mode for all the duration of the mission .",
+    "rdf:comment": "Shields, shells or any device insulation from/reflecting radiation exploiting emission and absorption events"
+
+}

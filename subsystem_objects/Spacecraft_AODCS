@@ -1,0 +1,48 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_AODCS",
+    "@type" :"http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/function" },
+            "owl:hasValue" : [
+                { "@id": "http://live.dbpedia.org/data/Flight_dynamics_(spacecraft).ntriples" },
+                { "@id": "http://live.dbpedia.org/data/Attitude_control.ntriples" },
+                { "@id": "http://live.dbpedia.org/data/Process_control.ntriples" }
+            ]
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/standsMaxTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/ElectronicDevice" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireOutWith" },
+            "owl:hasValue" : [
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
+            ]
+        }
+    ],
+
+    "rdf:label": "Spacecraft_AODCS",
+    "skos:prefLabel": "Attitude and Orbit Determination Control",
+    "rdf:comment": "Complex devices-subsystems used to set the direction and the position of the spacecraft, it controls flight dynamics.",
+    "spacecraft:isComponentOf":{ "@id":  "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+}

@@ -1,0 +1,25 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal_ActiveDevice",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft_Thermal" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/PoweredDevice" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireInWith" },
+            "owl:hasValue" : [
+                { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
+                { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_BackupPower" }
+            ]
+        }
+    ],
+
+    "rdf:label": "Spacecraft_Thermal_ActiveDevice",
+    "skos:prefLabel": "Device that of class Thermal that consumes energy from the spacecraft power source.",
+    "rdf:comment": "Complex devices-subsystems used to protect sensors or electronic devices from over/under-heating, like refrigeration absorption."
+
+}

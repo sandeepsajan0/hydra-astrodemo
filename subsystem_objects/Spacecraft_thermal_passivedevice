@@ -1,0 +1,28 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal_PassiveDevice",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Thermal" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/PhysicalDevice" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        }
+    ],
+
+    "rdf:label": "Spacecraft_Thermal_PassiveDevice",
+    "skos:prefLabel": "Device of of class Thermal that does NOT consume energy from the spacecraft power source.",
+    "rdf:comment": "They are passive because they mostly transform radiation into heating/cooling ",
+    "spacecraft:isComponentOf": { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+
+}

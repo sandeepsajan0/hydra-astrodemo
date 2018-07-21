@@ -1,0 +1,59 @@
+{
+    "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_Propulsion",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "rdfs:subClassOf" : [
+        { "@id": "http://ontology.projectchronos.eu/spacecraft/Subsystem_Spacecraft" },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsytems/function" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/ProjectilePropelling" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/spacecraft/isSubsystemOf" },
+            "owl:hasValue" : { "@id": "http://ontology.projectchronos.eu/spacecraft/Spacecraft" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/typeOfPropellant" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasSpecificImpulse" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/maxWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+                      {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/minWorkingTemperature" },
+            "owl:minCardinality" : 1
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/subSystemType" },
+            "owl:hasValue" : { "@id": "http://umbel.org/umbel/rc/RocketEngine" }
+        },
+        {
+            "@type" : "http://www.w3.org/2002/07/owl#Restriction",
+            "owl:onProperty" : { "@id": "http://ontology.projectchronos.eu/subsystems/hasWireInWith" },
+            "owl:hasValue" : [
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_PrimaryPower" },
+              { "@id": "http://ontology.projectchronos.eu/subsystems/Spacecraft_CDH" }
+            ]
+        }
+    ],
+
+    "skos:prefLabel": "The set of subsystems needed to make a spacecraft moving in space",
+    "rdf:label": "Spacecraft_Propulsion.",
+    "rdf:comment": "Complex devices-subsystems used for impelling (processes of applying a force which results in translational motion) a spacecraft, in the specific http://umbel.org/umbel/rc/ProjectilePropelling",
+    "spacecraft:isComponentOf": "http://ontology.projectchronos.eu/spacecraft/Spacecraft",
+    "chronos:relConcept": {
+      "@id": "http://hypermedia.projectchronos.eu/data/dbpediadocs/propulsion"
+    }
+
+}
